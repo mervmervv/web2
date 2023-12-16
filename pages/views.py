@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import project_page
+
 
 # Create your views here.
 
@@ -30,12 +31,23 @@ def login(request):
 
 def signin(request):
    return render(request,'pages/signin.html') 
+ 
 
-def curlingtr(request):
-   return render(request,'pages/curlingtr.html') 
 
-def sportstr(request):
-   return render(request,'pages/sportstr.html') 
+
+
+def project_pages(request, project_url):
+   
+   ProjectPage = project_page.objects.all()
+
+   context = {
+     'project_page_content': ProjectPage
+   }
+
+   return render(request,'pages/project_page.html', context) 
+
     
+
+
 def duyuru1(request):
    return render(request,'pages/duyuru1.html') 
