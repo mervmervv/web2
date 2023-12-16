@@ -10,5 +10,4 @@ class project_page_admin(admin.ModelAdmin):
 
 
 admin.site.register(project_page,project_page_admin)
-
 # Register your models here.

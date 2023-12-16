@@ -14,9 +14,10 @@ urlpatterns=[
   path('duyuru', views.duyuru, name='duyuru'),
   path('login', views.login, name='login'),
   path('signin', views.signin, name='signin'),
-  path('curlingtr', views.curlingtr, name='curlingtr'),
-  path('sportstr', views.sportstr, name='sportstr'),
   path('duyuru1', views.duyuru1, name='duyuru1'),
+
+
+  path('projeler/<str:project_url>', views.project_pages, name='projeler'),
  
   
 ]

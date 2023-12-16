@@ -1,11 +1,12 @@
 from django.db import models
-import uuid
+from ckeditor.fields import RichTextField
 
 # class announcments(models.Model):
 #     picturelink = models.CharField(blank=True, null= True, max_length = 50, verbose_name = 'Resim Linki')
 #     title = models.CharField(blank=True, null= True, max_length = 50, verbose_name = 'Başlık')
 #     text = models.TextField(blank=True,null=True, max_length= 200, verbose_name = 'Mesaj')
 #     page_link = models.CharField(blank=True, null = True, verbose_name = "Duyuru Link")
+
 
 
 class project_page(models.Model):
@@ -15,9 +16,9 @@ class project_page(models.Model):
     referans = models.CharField(blank= False, null= False, max_length = 100, verbose_name = 'Proje Referansı')
     hedef = models.CharField(blank = False, null= False, max_length = 100, verbose_name = 'Hedef Kitle' )
     butce = models.CharField(blank = False, null= False, max_length = 100, verbose_name = 'Proje Bütçesi')
-    partner = models.TextField(blank = False, null= False, verbose_name = 'Proje Partnerleri')
-    akis = models.TextField(blank = False, null= False, verbose_name = 'Proje Akışı')
-    aciklama = models.TextField(blank = False, null= False, verbose_name = 'Proje Açıklaması')
+    partner = RichTextField(blank = False, null= False, verbose_name = 'Proje Partnerleri')
+    akis = RichTextField(blank = False, null= False, verbose_name = 'Proje Akışı')
+    aciklama = RichTextField(blank = False, null= False,verbose_name = 'Proje Açıklaması')
     image1 = models.CharField(blank=True, null=True, max_length=100, verbose_name='1. resim linki')
     image1text = models.CharField(blank=True, null=True, max_length=100, verbose_name='1. resim info')
     image2 = models.CharField(blank=True, null=True, max_length=100, verbose_name='2. resim linki')
