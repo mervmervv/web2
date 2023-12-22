@@ -2,23 +2,6 @@
 {% load static %}
 
 {% block content %}
-<!-- <div style="padding-left: 1225px;">
-    <div id="buton konum" class="btn-group">
-      <button type="button" class="btn btn-info">Dİl</button>
-      <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">English</a>
-      </div>
-
-    </div>
-  </div> -->
-
-
-
-<!-- start -->
 
 <br><br><br>
 
@@ -74,32 +57,33 @@
 
   <div class="container">
     <div class="row">
-        <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover">
-                <a class="lightbox" href="static/img/kinders6_1000x800.jpg">
-                 <!-- k -->   <img src="static/img/kinders6_1000x800.jpg" alt="Card Image" class="card-img-top">
-                </a>
-                
-            </div>
-        </div>
+      {% if about_page %}
+        {% for page_info in about_page %}
+          
+          {% if page_info.image1 %}
+          <div class="col-md-6 col-lg-4">
+              <div class="card border-0 transform-on-hover">
+                <img src="{{page_info.image1}}" alt="Card Image" class="card-img-top">
+              </div>
+          </div>
+          {%endif%}
+          {% if page_info.image2 %}
+          <div class="col-md-6 col-lg-4">
+              <div class="card border-0 transform-on-hover">
+                <img src="{{page_info.image2}}" alt="Card Image" class="card-img-top">
+              </div>
+          </div>
+          {%endif%}
+          {% if page_info.image3 %}
+          <div class="col-md-6 col-lg-4">
+              <div class="card border-0 transform-on-hover">
+                <img src="{{page_info.image3}}" alt="Card Image" class="card-img-top">
+              </div>
+          </div>
+          {%endif%}
 
-        <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover">
-                <a class="lightbox" href="static/img/kinders7_1000x800.jpg">
-                <!-- k -->    <img src="static/img/kinders7_1000x800.jpg" alt="Card Image" class="card-img-top">
-                </a>
-                
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-            <div class="card border-0 transform-on-hover">
-                <a class="lightbox" href="static/img/kinders8_1000x800.jpg">
-                 <!-- k -->   <img src="static/img/kinders8_1000x800.jpg" alt="Card Image" class="card-img-top">
-                </a>
-                
-            </div>
-        </div>
+        {% endfor%}
+      {%endif%} 
     </div>
 </div>
 
@@ -128,36 +112,37 @@
 <!-- FOTOĞRAFLAR -->
 <div class="container">
   <div class="row">
-      <div class="col-md-6 col-lg-4">
-          <div class="card border-0 transform-on-hover">
-              <a class="lightbox" href="static/img/kinders6_1000x800.jpg">
-               <!-- k -->   <img src="static/img/kinders6_1000x800.jpg" alt="Card Image" class="card-img-top">
-              </a>
-              
-          </div>
-      </div>
+    {% if about_page %}
+      {% for page_info in about_page %}
 
+      {% if page_info.image4 %}
       <div class="col-md-6 col-lg-4">
           <div class="card border-0 transform-on-hover">
-              <a class="lightbox" href="static/img/kinders7_1000x800.jpg">
-              <!-- k -->    <img src="static/img/kinders7_1000x800.jpg" alt="Card Image" class="card-img-top">
-              </a>
-              
+            <img src="{{page_info.image4}}" alt="Card Image" class="card-img-top">
           </div>
       </div>
+      {%endif%}
 
+      {% if page_info.image5 %}
       <div class="col-md-6 col-lg-4">
           <div class="card border-0 transform-on-hover">
-              <a class="lightbox" href="static/img/kinders8_1000x800.jpg">
-               <!-- k -->   <img src="static/img/kinders8_1000x800.jpg" alt="Card Image" class="card-img-top">
-              </a>
-              
+            <img src="{{page_info.image5}}" alt="Card Image" class="card-img-top">
           </div>
       </div>
+      {%endif%}
+
+      {% if page_info.image6 %}
+      <div class="col-md-6 col-lg-4">
+          <div class="card border-0 transform-on-hover">
+            <img src="{{page_info.image6}}" alt="Card Image" class="card-img-top">
+          </div>
+      </div>
+      {%endif%}
+
+      {%endfor%}
+    {%endif%}
   </div>
-
-
-
+</div>
 
 <br><br><br><br><br><br>
 {% endblock %}

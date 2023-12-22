@@ -7,7 +7,30 @@ from ckeditor.fields import RichTextField
 #     text = models.TextField(blank=True,null=True, max_length= 200, verbose_name = 'Mesaj')
 #     page_link = models.CharField(blank=True, null = True, verbose_name = "Duyuru Link")
 
+class galeri_page(models.Model):
+    display = models.IntegerField(blank=False, null= False, max_length=100, verbose_name='Gösterim Sırası')
+    image1 = models.CharField(blank=False, null= False, max_length=100, verbose_name='1. Resim linki')
+    image2 = models.CharField(blank=False, null= False, max_length=100, verbose_name='2. Resim linki')
+    image3 = models.CharField(blank=False, null= False, max_length=100, verbose_name='3. Resim linki')
 
+
+class about_page(models.Model):
+    confg = models.CharField(blank=False, null= False, max_length=100, verbose_name='Confg')
+    image1 = models.CharField(blank=True, null=True, max_length=100, verbose_name='1. Resim linki')
+    image2 = models.CharField(blank=True, null=True, max_length=100, verbose_name='2. Resim linki')
+    image3 = models.CharField(blank=True, null=True, max_length=100, verbose_name='3. Resim linki')
+    image4 = models.CharField(blank=True, null=True, max_length=100, verbose_name='4. Resim linki')
+    image5 = models.CharField(blank=True, null=True, max_length=100, verbose_name='5. Resim linki')
+    image6 = models.CharField(blank=True, null=True, max_length=100, verbose_name='6. Resim linki')
+
+
+
+class announcments(models.Model):
+    announcments_url = models.CharField(null=False, max_length=200, verbose_name='Duyuru URL adı')
+    title = models.CharField(null= False, max_length = 200, verbose_name = 'Duyuru Başlığı') 
+    message = models.CharField(null= False, max_length = 50, verbose_name = 'Kısa mesaj')
+    content = RichTextField(blank = False, null= False, verbose_name = 'Duyuru İçeriği')
+    image = models.CharField(blank=False, null=False, max_length=100, verbose_name='Resim linki')
 
 class project_page(models.Model):
     project_url = models.CharField(null= False, max_length = 200, verbose_name = 'Proje URL adı')
